@@ -1,0 +1,244 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  /* height: 100vh;
+  background-color: rgb(48, 48, 48); */
+
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(20px);
+}
+
+header .logo{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+
+header ul li{
+  list-style: none;
+}
+
+header ul li a{
+text-decoration: none;
+color: white;
+font-weight: 500;
+font-size: 1.25em;
+}
+header ul li.active a,
+header ul li:hover a{
+color: green;
+}
+#home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+#home::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  height: 25vw;
+  background: green;
+  border-top-right-radius: 25vw;
+  border-top-left-radius: 25vw;
+
+}
+#home .content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 650px;
+  z-index: 10;
+}
+
+#home .content h2{
+  position: relative;
+  font-size: 5em;
+  color: green;
+}
+
+#home .content p{
+  position: relative;
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+#home .me{
+position: absolute;
+bottom: 0;
+right:60px;
+width: 38%;
+max-height: 90vh;
+}
+.btn{
+  position: relative;
+  display: inline-block;
+  font-size: 1.25em;
+  max-width: 200px;
+  background: green;
+  color: black;
+  text-align: center;
+  padding: 18px 30px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+
+#shuffle{
+  display: grid;
+  place-items: center center;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  padding: 50px; 
+  gap: 40px;
+}
+.card{
+background-color: rgb(0, 0, 0);
+border-radius: 20px;
+box-shadow: 0 0 30px rgba(0, 0, 0, .18);
+}
+.container{
+  position: relative;
+  clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+} 
+img{
+  width: 100%;
+  display: block;
+  border-radius:20px 20px 0 0;
+}
+.container:after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.4;
+}
+.card1>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #f55003,
+    #06118c
+    );
+}
+
+.card2>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #0100ec,
+    #fc36f4
+    );
+}
+
+.card3>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #c8ec00,
+    #0a89b8
+    );
+}
+
+.card4>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #87004f,
+    #555aff
+    );
+}
+
+.card5>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #ec0000,
+    #e3e304
+    );
+}
+
+.card6>.container:after{
+  background-image: linear-gradient(
+    135deg, 
+    #2546ff,
+    #6b042f
+    );
+}
+.details{
+  padding: 20px 20px;
+}
+.details>h3{
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 15px 0 ;
+}
+.details>p{
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400 ;
+}
+#shuffle,
+#services,
+#about,
+#contact{
+  position: relative;
+  background: #34353a;
+  min-height: 100vh;
+  padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.secText h2{
+font-size: 3em;
+color: white;
+}
+.secText p{
+max-width: 700px;
+text-align: center;
+color: rgb(235, 235, 235);
+font-size: 1.1em;
+line-height: 1.5em;
+}
+.secText .content{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+}
