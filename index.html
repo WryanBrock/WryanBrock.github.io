@@ -213,8 +213,8 @@
       <header>
         <a class="logo" href="">WB Devs</a>
         <div class="menuToggle"></div>
-        <ul class=".nav">
-          <li><a href="#home">Home</a></li>
+        <ul class="nav">
+          <li><a class="active" href="#home">Home</a></li>
           <li><a href="#services">Skills</a></li>
           <li><a href="#shuffle">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -397,6 +397,22 @@
     <script src="js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+
+let list = document.querySelectorAll('.nav li');
+
+function active(){
+  list.forEach((i)=>i.classList.remove('active'));
+  this.classList.add('active');
+}
+list.forEach((i)=>i.addEventListener('click', active));
+
+let menuToggle = document.querySelector('.menuToggle');
+let header = document.querySelector('header');
+menuToggle.onclick = function(){
+  header.classList.toggle('active');
+}
+</script>
 </body>
 
 </html>

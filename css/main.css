@@ -445,9 +445,9 @@ body::-webkit-scrollbar-thumb {
   header.active ul{
     position:fixed;
     left: 0;
-    top: 84px;
+    top: 79px;
     width: 100%;
-    height: calc(100vh-84vh);
+    height: calc(100vh - 79px);
     background: rgb(24, 24, 24);
     display: flex;
     justify-content: center;
@@ -458,6 +458,7 @@ body::-webkit-scrollbar-thumb {
   }
   header.active ul li a{
     font-size: 2em;
+}
 }
 @media(max-width: 700px){
 #home .content h2{
@@ -487,5 +488,6 @@ body::-webkit-scrollbar-thumb {
 #contact .content a{
   height: 80px;
 }
+
 
 }
