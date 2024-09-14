@@ -217,7 +217,10 @@ svg {
 .card2 > .container:after {
   background-image: linear-gradient(135deg, #0100ec, #fc36f4);
 }
-
+.card2:hover{
+  background-color:red;
+}
+  
 .card3 > .container:after {
   background-image: linear-gradient(135deg, #c8ec00, #0a89b8);
 }
