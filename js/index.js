@@ -4,6 +4,14 @@ function myFunction() {
   myVar = setTimeout(showPage, 3000);
 }
 
+const menu = document.querySelector(".menuToggle");
+const ul = document.getElementsByClassName("nav");
+const header = document.getElementById("header");
+
+menu.addEventListener("click", function () {
+  header.classList.toggle("active");
+});
+
 function showPage() {
   //   document.getElementById("loader").style.display = "none";
   document.getElementById("show").style.display = "block";
@@ -53,12 +61,9 @@ function add_circle(svg, x, y) {
   return circle;
 }
 
-
-
-function connections(){
+function connections() {
   const dotList = document.querySelectorAll("svg-node");
-  console.log()
-
+  console.log();
 }
 // for (let i = 0; i < dotList.length; i++) {
 //   console.log("start");
