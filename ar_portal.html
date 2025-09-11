@@ -1,59 +1,41 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <title>My AR Garden</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
     <style>
-      #linkButton {
-        display: none; /* hidden at start */
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 25px;
-        background: #007bff;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      body,
+      html {
+        margin: 0;
+        overflow: hidden;
       }
     </style>
   </head>
-  <body style="margin: 0; overflow: hidden">
+  <body>
     <a-scene embedded arjs>
-      <!-- Marker -->
-      <a-marker type="pattern" url="./pattern-qr-code.patt" id="linkMarker">
+      <!-- Marker 1: Hiro (demo marker) -->
+      <a-marker preset="hiro">
         <a-box position="0 0.5 0" material="color: red;"></a-box>
+      </a-marker>
+
+      <!-- Marker 2: Kanji (demo marker) -->
+      <a-marker type="pattern" url="./patterns/pattern-Flower.patt">
+        <a-sphere position="0 0.5 0" radius="0.5" color="blue"></a-sphere>
+      </a-marker>
+
+      <!-- Marker 3: Your Custom Ladybug marker -->
+      <a-marker type="pattern" url="./patterns/pattern-RBBug.patt">
+        <a-entity position="0 0.5 1" gltf-model="url(Berry.glb)" scale="0.5 0.5 0.5"></a-entity>
+      </a-marker>
+
+            <!-- Marker 3: Your Custom Ladybug marker -->
+      <a-marker type="pattern" url="./patterns/pattern-YellowMarker.patt">
+        <a-entity position="1 1.5 0" gltf-model="url(DomeHome.glb)" scale="0.5 0.5 0.5"></a-entity>
       </a-marker>
 
       <!-- Camera -->
       <a-entity camera></a-entity>
     </a-scene>
-    <!-- Button overlay -->
-    <button
-      id="linkButton"
-      onclick="window.open('https://wryanbrock.github.io/ar_portal.html', '_blank')"
-    >
-      Open My Website
-    </button>
-    <script>
-      // Get the marker
-      let marker = document.querySelector("#linkMarker");
-      let button = document.querySelector("#linkButton");
-
-      // Show button when marker is found
-      marker.addEventListener("markerFound", () => {
-        console.log("Marker detected!");
-        button.style.display = "block";
-      });
-
-      // Hide button when marker is lost
-      marker.addEventListener("markerLost", () => {
-        console.log("Marker lost");
-        button.style.display = "none";
-      });
-    </script>
   </body>
 </html>
