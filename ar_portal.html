@@ -1,35 +1,33 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-  <body style="margin: 0; overflow: hidden;">
+  <body style="margin: 0; overflow: hidden">
     <a-scene embedded arjs>
-      
-      <!-- Marker as world anchor -->
-      <a-marker preset="hiro">
-
-        <!-- Ground plane -->
-        <a-plane 
-          position="0 -0.5 0" 
-          rotation="-90 0 0" 
-          width="50" 
-          height="50" 
-          color="green">
-        </a-plane>
-
-        <!-- Skybox (infinite background) -->
-        <a-sky color="skyblue"></a-sky>
-
-        <!-- Objects -->
-        <a-box position="2 0.5 -2" material="color: brown"></a-box>
-        <a-cylinder position="-2 1 -3" radius="0.5" height="2" color="darkgreen"></a-cylinder>
-        <a-sphere position="0 3 -5" radius="1.5" color="yellow"></a-sphere>
-
+      <!-- Marker -->
+      <a-marker preset="hiro" id="linkMarker">
+        <a-box position="0 0.5 0" material="color: red;"></a-box>
       </a-marker>
 
       <!-- Camera -->
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      // Get the marker
+      let marker = document.querySelector("#linkMarker");
+
+      // When marker is found, open the link
+      marker.addEventListener("markerFound", () => {
+        console.log("Marker detected!");
+        window.location.href = "https://wryanbrock.github.io/ar_portal.html"; // 👈 Replace with your link
+      });
+
+      // (Optional) When marker is lost
+      marker.addEventListener("markerLost", () => {
+        console.log("Marker lost");
+      });
+    </script>
   </body>
 </html>
